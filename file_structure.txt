@@ -1,0 +1,34 @@
+/kafka-audio-analysis/
+│
+├── /data/                          # Directory for training and testing data
+│   ├── /audio_samples/             # Directory for raw audio files
+│   │   ├── cluster_1/              # Subdirectory for each Kafka cluster
+│   │   ├── cluster_2/
+│   │   ├── cluster_3/
+│   │   └── audio_001.wav           # Audio file examples (WAV format)
+│   │   └── audio_002.wav
+│   │
+│   └── /processed_data/            # Processed data (feature vectors, labels)
+│       └── audio_features.csv      # CSV file with extracted audio features
+│
+├── /models/                        # Machine learning models
+│   ├── audio_anomaly_model.pkl     # Serialized ML model for anomaly detection (PKL format)
+│   └── distance_calculation_model.pkl # Model for distance estimation (if needed)
+│
+├── /notebooks/                     # Jupyter notebooks for experiments
+│   └── analysis.ipynb              # Notebook for data exploration and training
+│
+├── /src/                           # Source code for training, Kafka consumers, producers, etc.
+│   ├── kafka_producer.py           # Script to send audio data to Kafka
+│   ├── kafka_consumer.py           # Script to consume audio data from Kafka
+│   ├── feature_extraction.py       # Script to extract features from audio
+│   ├── anomaly_detection.py        # ML model for detecting suspicious audio
+│   ├── distance_estimation.py      # Script to calculate distance using triangulation
+│   ├── utils.py                    # Helper functions (e.g., audio pre-processing)
+│   └── config.yaml                 # Configuration file (Kafka settings, paths, etc.)
+│
+├── /output/                        # Output results (suspicious audio, distances)
+│   └── suspicious_events.csv       # CSV file with detected anomalies and distances
+│
+├── README.md                       # Project description and setup instructions
+└── requirements.txt                # Python dependencies
